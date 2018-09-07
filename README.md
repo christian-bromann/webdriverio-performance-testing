@@ -21,7 +21,7 @@ Now you are good to go to run the scenarios.
 
 To optimize for page weight the [tutorial author](https://twitter.com/kaycebasques) did the following steps:
 
-- in `server.js` add compression to your Express.js server so images are being served compressed.
+- in `server.js` add compression to your Express.js server so images are being served compressed:
     
     ```js
     const compression = require('compression');
@@ -37,3 +37,7 @@ To optimize the page load speed further the author did some optimizations to the
 
 - in `template.html` remove the LoDash and jQuery scripts since they are not used at all and block the page from being loaded
 - in `src/App.jsx` remove the function call `this.mineBitcoin(1500);` in the constructor which was responsible for a lot of CPU heavy computation during page load.
+
+---
+
+This project is a demo for [my talk](https://jsi2018.sched.com/event/F76M/automated-performance-testing-with-webdriver-christian-bromann-sauce-labs) at [#NodeJSInteractive](https://events.linuxfoundation.org/events/js-interactive-2018/) on _"Automated Performance Testing With WebDriver"_.
