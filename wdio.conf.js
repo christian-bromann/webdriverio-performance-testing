@@ -1,3 +1,7 @@
+const path = require('path')
+
+const LOG_PATH = path.join(__dirname, 'logs')
+
 exports.config = {
     //
     // ====================
@@ -108,7 +112,7 @@ exports.config = {
     // Services take over a specific job you don't want to take care of. They enhance
     // your test setup with almost no effort. Unlike plugins, they don't add new
     // commands. Instead, they hook themselves up into the test process.
-    services: ['devtools'],//
+    services: ['devtools', 'selenium-standalone'],//
     // Framework you want to run your specs with.
     // The following are supported: Mocha, Jasmine, and Cucumber
     // see also: http://webdriver.io/guide/testrunner/frameworks.html
@@ -116,7 +120,8 @@ exports.config = {
     // Make sure you have the wdio adapter package for the specific framework installed
     // before running any tests.
     framework: 'mocha',
-    logDir: __dirname,
+    logDir: LOG_PATH,
+    seleniumLogs: LOG_PATH,
     //
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
