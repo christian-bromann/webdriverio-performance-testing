@@ -31,12 +31,24 @@ To optimize for page weight the [tutorial author](https://twitter.com/kaycebasqu
 - in `src/model.js` change the variable `dir` in line 3 from `big` to `small` in order to load optimized images
 - in `webpack.config.js` change the mode from `development` to `production` to enable tree shaking and serve less script payload
 
+To run the test call:
+
+```sh
+$ npm test -- --spec pageWeight
+```
+
 ## Script Blocking Scenario
 
 To optimize the page load speed further the author did some optimizations to the application logic:
 
 - in `template.html` remove the LoDash and jQuery scripts since they are not used at all and block the page from being loaded
 - in `src/App.jsx` remove the function call `this.mineBitcoin(1500);` in the constructor which was responsible for a lot of CPU heavy computation during page load.
+
+To run the test call:
+
+```sh
+$ npm test -- --spec scriptBlocking
+```
 
 ---
 
