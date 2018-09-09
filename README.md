@@ -17,6 +17,12 @@ $ npm install
 
 Now you are good to go to run the scenarios.
 
+To run all the scenarios, use the below command
+
+```sh
+$ npm test
+```
+
 ## Page Weight Scenario
 
 To optimize for page weight the [tutorial author](https://twitter.com/kaycebasques) did the following steps:
