@@ -18,9 +18,9 @@ describe('scriptBlocking', () => {
         browser.endTracing()
     })
     
-    it('should have something rendered within 2 seconds', () => {
+    it('should have something rendered within 3.5 seconds', () => {
         const { firstMeaningfulPaint } = browser.getPerformanceMetrics()
-        expect(firstMeaningfulPaint).to.be.below(2 * 1000) // 2 seconds
+        expect(firstMeaningfulPaint).to.be.below(3.5 * 1000) // 2 seconds
     })
 
     it('should be interactible within 3 seconds', function () {
@@ -33,9 +33,8 @@ describe('scriptBlocking', () => {
         expect(timeToFirstInteractive).to.be.below(3 * 1000) // 3 seconds
     })
     
-    it('should be loaded within 6 seconds', () => {
-        const { load, firstMeaningfulPaint } = browser.getPerformanceMetrics()
-        expect(load).to.be.below(6 * 1000) // 6 seconds
-        expect(firstMeaningfulPaint).to.be.below(2 * 1000) // 2 seconds
+    it('should be loaded within 6.5 seconds', () => {
+        const { load } = browser.getPerformanceMetrics()
+        expect(load).to.be.below(6.5 * 1000) // 6 seconds
     })
 })
