@@ -26,11 +26,22 @@ describe('scriptBlocking', () => {
     it('should be interactible within 3 seconds', function () {
         const { timeToFirstInteractive } = browser.getPerformanceMetrics()
         
+        /**
+         * In most cases this metric can't be determined based on the nature of
+         * how it is measured. It would require to trace a time frame where the
+         * browser is not running any long tasks or is doing heavy I/O work. Since
+         * we stop tracing right after page load that window is often not captured.
+         */
         if (!timeToFirstInteractive) {
             return this.skip()
         }
         
         expect(timeToFirstInteractive).to.be.below(3 * 1000) // 3 seconds
+    })
+    
+    it('should not increase SpeedIndex limit', () => {
+        const { perceptualSpeedIndex } = browser.getSpeedIndex()
+        expect(perceptualSpeedIndex).to.be.below(3.5 * 1000)
     })
     
     it('should be loaded within 6.5 seconds', () => {
