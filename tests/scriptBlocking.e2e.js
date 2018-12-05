@@ -30,7 +30,6 @@ describe('scriptBlocking', () => {
     
     it('should not increase SpeedIndex limit', () => {
         const { perceptualSpeedIndex, speedIndex } = browser.getSpeedIndex()
-        console.log({ perceptualSpeedIndex, speedIndex });
         expect(perceptualSpeedIndex).to.be.below(4.2 * 1000)
     })
     
