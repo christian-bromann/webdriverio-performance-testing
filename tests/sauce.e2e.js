@@ -2,6 +2,12 @@ import { expect } from 'chai'
 
 describe('scriptBlocking', () => {
     before(() => {
+        browser.execute('sauce:debug', {
+            method: 'Emulation.setCPUThrottlingRate',
+            params: { rate: 4 }
+        })
+
+        browser.throttleNetwork('Regular 3G')
         browser.url('/')
     })
 
