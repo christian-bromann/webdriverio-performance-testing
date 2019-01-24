@@ -4,7 +4,9 @@
   "description": "A small showcase on how to test performance using WebdriverIO",
   "main": "wdio.conf.js",
   "scripts": {
-    "test": "wdio"
+    "wdio": "node -r @babel/register ./node_modules/.bin/wdio",
+    "test:local": "npm run wdio wdio.local.conf.js",
+    "test:sauce": "npm run wdio wdio.sauce.conf.js"
   },
   "repository": {
     "type": "git",
@@ -24,16 +26,19 @@
   },
   "homepage": "https://github.com/christian-bromann/webdriverio-performance-testing#readme",
   "dependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.3.1",
+    "@babel/register": "^7.0.0",
+    "@wdio/cli": "^5.4.0",
+    "@wdio/devtools-service": "^5.2.8",
+    "@wdio/local-runner": "^5.4.0",
+    "@wdio/mocha-framework": "^5.4.0",
+    "@wdio/spec-reporter": "^5.2.3",
+    "@wdio/sync": "^5.3.2",
     "chai": "^4.1.2",
-    "@wdio/cli": "^5.0.0-beta.13",
-    "@wdio/devtools-service": "^5.0.0-beta.13",
-    "@wdio/local-runner": "^5.0.0-beta.13",
-    "@wdio/mocha-framework": "^5.0.0-beta.13",
-    "@wdio/selenium-standalone-service": "^5.0.0-beta.13",
-    "@wdio/spec-reporter": "^5.0.0-beta.13",
-    "@wdio/sync": "^5.0.0-beta.13",
-    "webdriverio": "^5.0.0-beta.13"
+    "chromedriver": "^2.45.0",
+    "wdio-chromedriver-service": "^5.0.0",
+    "webdriverio": "^5.4.0"
   }
 }

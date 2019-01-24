@@ -1,7 +1,5 @@
 const path = require('path')
 
-const LOG_PATH = path.join(__dirname, 'logs')
-
 exports.config = {
     //
     // ====================
@@ -11,7 +9,6 @@ exports.config = {
     // WebdriverIO allows it to run your tests in arbitrary locations (e.g. locally or
     // on a remote machine).
     runner: 'local',
-    
     //
     // ==================
     // Specify Test Files
@@ -26,7 +23,9 @@ exports.config = {
     exclude: [],
     // Suites
     suites: {
-        pageWeight: ['./tests/pageWeight.e2e.js']
+        pageWeight: ['./tests/pageWeight.e2e.js'],
+        scriptBlocking: ['./tests/scriptBlocking.e2e.js'],
+        sauce: ['./tests/sauce.e2e.js']
     },
     //
     // ============
@@ -45,14 +44,6 @@ exports.config = {
     // from the same test should run tests.
     //
     maxInstances: 10,
-    //
-    // If you have trouble getting all important capabilities together, check out the
-    // Sauce Labs platform configurator - a great tool to configure your capabilities:
-    // https://docs.saucelabs.com/reference/platforms-configurator
-    //
-    capabilities: [{
-        browserName: 'chrome'
-    }],
     //
     // ===================
     // Test Configurations
@@ -78,7 +69,7 @@ exports.config = {
     // with `/`, the base url gets prepended, not including the path portion of your baseUrl.
     // If your `url` parameter starts without a scheme or `/` (like `some/path`), the base url
     // gets prepended directly.
-    baseUrl: 'https://magnificent-cabbage.glitch.me',
+    baseUrl: 'https://jasper-bison.glitch.me',
     //
     // Default timeout for all waitFor* commands.
     waitforTimeout: 10000,
@@ -108,11 +99,6 @@ exports.config = {
     //     browserevent: {}
     // },
     //
-    // Test runner services
-    // Services take over a specific job you don't want to take care of. They enhance
-    // your test setup with almost no effort. Unlike plugins, they don't add new
-    // commands. Instead, they hook themselves up into the test process.
-    services: ['devtools', 'selenium-standalone'],
     // Framework you want to run your specs with.
     // The following are supported: Mocha, Jasmine, and Cucumber
     // see also: http://webdriver.io/guide/testrunner/frameworks.html
@@ -120,8 +106,7 @@ exports.config = {
     // Make sure you have the wdio adapter package for the specific framework installed
     // before running any tests.
     framework: 'mocha',
-    logDir: LOG_PATH,
-    seleniumLogs: LOG_PATH,
+    outputDir: path.join(__dirname, 'logs'),
     //
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
@@ -133,7 +118,7 @@ exports.config = {
     mochaOpts: {
         ui: 'bdd',
         timeout: 30000,
-        compilers: ['js:babel-core/register']
+        compilers: ['js:@babel/register']
     },
     //
     // =====
@@ -174,7 +159,7 @@ exports.config = {
      */
     // beforeCommand: function (commandName, args) {
     // },
-    
+
     /**
      * Hook that gets executed before the suite starts
      * @param {Object} suite suite details
@@ -211,7 +196,6 @@ exports.config = {
      */
     // afterSuite: function (suite) {
     // },
-    
     /**
      * Runs after a WebdriverIO command gets executed
      * @param {String} commandName hook command name
