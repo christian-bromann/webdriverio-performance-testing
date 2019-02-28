@@ -16,6 +16,8 @@ exports.config = Object.assign(common, {
         browserName: 'chrome',
         platform: 'Windows 10',
         version: 'latest',
-        extendedDebugging: true
+        extendedDebugging: true,
+        name: 'Performance Check for Jaspers Page',
+        excludeDriverLogs: ['driver', 'browser', 'performance']
     }]
 })
