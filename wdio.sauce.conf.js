@@ -1,5 +1,18 @@
 const { config: common } = require('./wdio.conf')
 
+const sauceOptions = {
+  'sauce:options': {
+    seleniumVersion: '3.141.59',
+    build: `Build ${Date.now()}`.slice(0, -3)
+  }
+}
+
+const chromeOptions = {
+  'goog:chromeOptions': {
+    'w3c': true
+  }
+}
+
 exports.config = Object.assign(common, {
     user: process.env.SAUCE_USERNAME,
     key: process.env.SAUCE_ACCESS_KEY,
@@ -14,10 +27,11 @@ exports.config = Object.assign(common, {
     //
     capabilities: [{
         browserName: 'chrome',
-        platform: 'Windows 10',
-        version: 'latest',
+        platformName: 'Windows 10',
+        browserVersion: 'latest',
         extendedDebugging: true,
         name: 'Performance Check for Jaspers Page',
-        excludeDriverLogs: ['driver', 'browser', 'performance']
+        ...sauceOptions,
+        ...chromeOptions
     }]
 })
