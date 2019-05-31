@@ -10,7 +10,9 @@ describe('pageWeight', () => {
           cacheEnabled: false
         })
         browser.url('/')
-        { transferred, details } = browser.getPageWeight()
+        const pageWeight = browser.getPageWeight()
+        transferred = pageWeight.transferred
+        details = pageWeight.details
     })
 
     it('should load not more than 450kb', () => {

@@ -5,8 +5,8 @@ exports.config = Object.assign(common, {
   path: '/',
 
   specs: [
-    './tests/pageWeight.e2e.js',
-    './tests/scriptBlocking.e2e.js'
+    './tests/resource.test.js',
+    './tests/performance.test.js'
   ],
 
   // If you have trouble getting all important capabilities together, check out the

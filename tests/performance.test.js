@@ -14,8 +14,8 @@ describe('My Performance Test', () => {
         expect(metrics.firstMeaningfulPaint).to.be.below(3 * 1000) // 3 seconds
     })
 
-    it('should not increase timeToFirstInteractive limi', function () {
-        expect(metrics.timeToFirstInteractive).to.be.below(3 * 1000) // 3 seconds
+    it('should not increase firstInteractive limi', function () {
+        expect(metrics.firstInteractive).to.be.below(3 * 1000) // 3 seconds
     })
 
     it('should not increase speedIndex limit', () => {
