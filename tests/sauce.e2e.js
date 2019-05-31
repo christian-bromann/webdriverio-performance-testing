@@ -13,13 +13,13 @@ describe('scriptBlocking', () => {
     })
 
     it('should be interactible within 3 seconds', function () {
-        const { timeToFirstInteractive } = browser.getPageLogs('sauce:performance')
-        expect(timeToFirstInteractive).to.be.below(3 * 1000) // 3 seconds
+        const { firstInteractive } = browser.getPageLogs('sauce:performance')
+        expect(firstInteractive).to.be.below(3 * 1000) // 3 seconds
     })
 
     it('should not increase SpeedIndex limit', () => {
-        const { perceptualSpeedIndex, speedIndex } = browser.getPageLogs('sauce:performance')
-        expect(perceptualSpeedIndex).to.be.below(4.2 * 1000) // 4.2 seconds
+        const { speedIndex } = browser.getPageLogs('sauce:performance')
+        expect(speedIndex).to.be.below(4.2 * 1000) // 4.2 seconds
     })
 
     it('should be loaded within 6.5 seconds', () => {
@@ -28,7 +28,7 @@ describe('scriptBlocking', () => {
     })
 
     it('should test performance with a single command', () => {
-        const { result } = browser.assertPerformance(browser.options.capabilities.name, [
+        const { result } = browser.assertPerformance(browser.config.capabilities['sauce:options'].name, [
             'firstMeaningfulPaint',
             'timeToFirstInteractive',
             'speedIndex',

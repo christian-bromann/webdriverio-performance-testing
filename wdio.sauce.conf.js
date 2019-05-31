@@ -3,7 +3,11 @@ const { config: common } = require('./wdio.conf')
 const sauceOptions = {
   'sauce:options': {
     seleniumVersion: '3.141.59',
-    build: `Build ${Date.now()}`.slice(0, -3)
+    name: 'Performance Test for Jaspers Page',
+    build: `Build ${Date.now()}`.slice(0, -3),
+    extendedDebugging: true,
+    capturePerformance: true,
+    crmuxdriverVersion: 'beta'
   }
 }
 
@@ -29,8 +33,6 @@ exports.config = Object.assign(common, {
         browserName: 'chrome',
         platformName: 'Windows 10',
         browserVersion: 'latest',
-        extendedDebugging: true,
-        name: 'Performance Check for Jaspers Page',
         ...sauceOptions,
         ...chromeOptions
     }]
