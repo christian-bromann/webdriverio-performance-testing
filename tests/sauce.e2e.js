@@ -2,7 +2,15 @@ import { expect } from 'chai'
 
 describe('scriptBlocking', () => {
     before(() => {
-        browser.throttleCPU(4)
+        /**
+         * replace with `browser.throttleCPU(4)` once
+         * https://github.com/webdriverio/webdriverio/pull/4046
+         * is merged
+         */
+        browser.execute('sauce:debug', {
+            method: 'Emulation.setCPUThrottlingRate',
+            params: { rate: 4 }
+        })
         browser.throttleNetwork('Good 3G')
         browser.url('/')
     })
@@ -28,12 +36,12 @@ describe('scriptBlocking', () => {
     })
 
     it('should test performance with a single command', () => {
-        const { result } = browser.assertPerformance(browser.config.capabilities['sauce:options'].name, [
+        const { result, details } = browser.assertPerformance(browser.config.capabilities['sauce:options'].name, [
             'firstMeaningfulPaint',
-            'timeToFirstInteractive',
+            'firstInteractive',
             'speedIndex',
             'load'
         ])
-        expect(result).to.be.equal('pass')
+        expect(result).to.be.equal('pass', `Performance check failed: ${JSON.stringify(details, null, 4)}`)
     })
 })

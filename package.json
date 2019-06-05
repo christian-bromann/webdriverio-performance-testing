@@ -4,9 +4,8 @@
   "description": "A small showcase on how to test performance using WebdriverIO",
   "main": "wdio.conf.js",
   "scripts": {
-    "wdio": "node -r @babel/register ./node_modules/.bin/wdio",
-    "test:local": "npm run wdio wdio.local.conf.js",
-    "test:sauce": "npm run wdio wdio.sauce.conf.js"
+    "test:local": "wdio wdio.local.conf.js",
+    "test:sauce": "wdio wdio.sauce.conf.js"
   },
   "repository": {
     "type": "git",
