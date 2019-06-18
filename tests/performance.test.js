@@ -23,6 +23,6 @@ describe('My Performance Test', () => {
     })
 
     it('should have a minimum Lighthouse performance score', () => {
-        expect(score).to.be.above(0.95)
+        expect(score).to.be.above(0.92)
     })
 })
