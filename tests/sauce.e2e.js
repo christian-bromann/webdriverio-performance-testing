@@ -2,15 +2,7 @@ import { expect } from 'chai'
 
 describe('scriptBlocking', () => {
     before(() => {
-        /**
-         * replace with `browser.throttleCPU(4)` once
-         * https://github.com/webdriverio/webdriverio/pull/4046
-         * is merged
-         */
-        browser.execute('sauce:debug', {
-            method: 'Emulation.setCPUThrottlingRate',
-            params: { rate: 4 }
-        })
+        browser.throttleCPU(4)
         browser.throttleNetwork('Good 3G')
         browser.url('/')
     })
