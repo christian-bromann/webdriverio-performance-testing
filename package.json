@@ -36,7 +36,7 @@
     "@wdio/spec-reporter": "^5.8.0",
     "@wdio/sync": "^5.9.1",
     "chai": "^4.1.2",
-    "chromedriver": "^75.0.0",
+    "chromedriver": "^77.0.0",
     "wdio-chromedriver-service": "^5.0.1",
     "webdriverio": "^5.9.1"
   }
