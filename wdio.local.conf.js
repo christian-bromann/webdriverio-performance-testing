@@ -22,7 +22,7 @@ exports.config = Object.assign(common, {
   // your test setup with almost no effort. Unlike plugins, they don't add new
   // commands. Instead, they hook themselves up into the test process.
   services: ['devtools', 'chromedriver'],
-  maxInstances: 1,
+  maxInstances: 2,
 
   // logs
   chromeDriverLogs: common.outputDir
