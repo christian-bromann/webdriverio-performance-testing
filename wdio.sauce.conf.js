@@ -6,8 +6,7 @@ const sauceOptions = {
     name: 'Performance Test for Jaspers Page',
     build: `Build ${Date.now()}`.slice(0, -3),
     extendedDebugging: true,
-    capturePerformance: true,
-    crmuxdriverVersion: 'beta'
+    capturePerformance: true
   }
 }
 
