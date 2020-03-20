@@ -20,7 +20,7 @@ Now you are good to go to run the scenarios.
 To run all the scenarios, use the below command
 
 ```sh
-$ npm test
+$ npm run test:local
 ```
 
 ## Page Weight Scenario
@@ -40,7 +40,7 @@ To optimize for page weight the [tutorial author](https://twitter.com/kaycebasqu
 To run the test call:
 
 ```sh
-$ npm test -- --spec pageWeight
+$ npm run test:local -- --spec pageWeight
 ```
 
 ## Script Blocking Scenario
@@ -53,7 +53,7 @@ To optimize the page load speed further the author did some optimizations to the
 To run the test call:
 
 ```sh
-$ npm test -- --spec scriptBlocking
+$ npm run test:local -- --spec scriptBlocking
 ```
 
 ---
