@@ -6,10 +6,6 @@ exports.config = {
     // Runner Configuration
     // ====================
     //
-    // WebdriverIO allows it to run your tests in arbitrary locations (e.g. locally or
-    // on a remote machine).
-    runner: 'local',
-    //
     // ==================
     // Specify Test Files
     // ==================
@@ -28,14 +24,6 @@ exports.config = {
         sauce: ['./tests/sauce.e2e.js']
     },
     //
-    // ============
-    // Capabilities
-    // ============
-    // Define your capabilities here. WebdriverIO can run multiple capabilities at the same
-    // time. Depending on the number of capabilities, WebdriverIO launches several test
-    // sessions. Within your capabilities you can overwrite the spec and exclude options in
-    // order to group specific specs to a specific capability.
-    //
     // First, you can define how many instances should be started at the same time. Let's
     // say you have 3 different capabilities (Chrome, Firefox, and Safari) and you have
     // set maxInstances to 1; wdio will spawn 3 processes. Therefore, if you have 10 spec
@@ -50,16 +38,8 @@ exports.config = {
     // ===================
     // Define all options that are relevant for the WebdriverIO instance here
     //
-    // By default WebdriverIO commands are executed in a synchronous way using
-    // the wdio-sync package. If you still want to run your tests in an async way
-    // e.g. using promises you can set the sync option to false.
-    sync: true,
-    //
     // Level of logging verbosity: silent | verbose | command | data | result | error
-    logLevel: 'trace',
-    //
-    // Warns when a deprecated command is used
-    deprecationWarnings: true,
+    logLevel: 'debug',
     //
     // If you only want to run your tests until a specific amount of tests have failed use
     // bail (default is 0 - don't bail, run all tests).

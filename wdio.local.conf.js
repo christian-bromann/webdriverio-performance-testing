@@ -1,9 +1,6 @@
 const { config: common } = require('./wdio.conf')
 
 exports.config = Object.assign(common, {
-  port: 9515,
-  path: '/',
-
   specs: [
     './tests/resource.test.js',
     './tests/performance.test.js'
@@ -14,7 +11,8 @@ exports.config = Object.assign(common, {
   // https://docs.saucelabs.com/reference/platforms-configurator
   //
   capabilities: [{
-      browserName: 'chrome'
+      browserName: 'chrome',
+      acceptInsecureCerts: true
   }],
 
   // Test runner services
