@@ -1,6 +1,6 @@
 {
   "name": "webdriverio-performance-testing",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A small showcase on how to test performance using WebdriverIO",
   "main": "wdio.conf.js",
   "scripts": {
@@ -36,8 +36,6 @@
     "@wdio/spec-reporter": "^6.1.12",
     "@wdio/sync": "^6.1.8",
     "chai": "^4.2.0",
-    "chromedriver": "^83.0.0",
-    "wdio-chromedriver-service": "^6.0.3",
     "webdriverio": "^6.1.12"
   }
 }
