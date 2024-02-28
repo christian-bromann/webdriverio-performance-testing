@@ -2,7 +2,7 @@
   "name": "webdriverio-performance-testing",
   "version": "0.0.1",
   "description": "A small showcase on how to test performance using WebdriverIO",
-  "main": "wdio.conf.js",
+  "type": "module",
   "scripts": {
     "test:local": "wdio wdio.local.conf.js",
     "test:sauce": "wdio wdio.sauce.conf.js"
@@ -25,19 +25,11 @@
   },
   "homepage": "https://github.com/christian-bromann/webdriverio-performance-testing#readme",
   "dependencies": {
-    "@babel/cli": "^7.8.4",
-    "@babel/core": "^7.9.6",
-    "@babel/preset-env": "^7.9.6",
-    "@babel/register": "^7.9.0",
-    "@wdio/cli": "^6.1.12",
-    "@wdio/devtools-service": "^6.1.11",
-    "@wdio/local-runner": "^6.1.12",
-    "@wdio/mocha-framework": "^6.1.8",
-    "@wdio/spec-reporter": "^6.1.12",
-    "@wdio/sync": "^6.1.8",
-    "chai": "^4.2.0",
-    "chromedriver": "^83.0.0",
-    "wdio-chromedriver-service": "^6.0.3",
-    "webdriverio": "^6.1.12"
+    "@wdio/cli": "^8.32.3",
+    "@wdio/devtools-service": "^8.32.3",
+    "@wdio/local-runner": "^8.32.3",
+    "@wdio/mocha-framework": "^8.32.3",
+    "@wdio/spec-reporter": "^8.32.2",
+    "webdriverio": "^8.32.3"
   }
 }

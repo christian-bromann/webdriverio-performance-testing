@@ -1,4 +1,4 @@
-const { config: common } = require('./wdio.conf')
+import { config as common } from './wdio.conf.js'
 
 const sauceOptions = {
   'sauce:options': {
@@ -16,7 +16,8 @@ const chromeOptions = {
   }
 }
 
-exports.config = Object.assign(common, {
+export const config = {
+    ...common,
     user: process.env.SAUCE_USERNAME,
     key: process.env.SAUCE_ACCESS_KEY,
 
@@ -35,4 +36,4 @@ exports.config = Object.assign(common, {
         ...sauceOptions,
         ...chromeOptions
     }]
-})
+}
